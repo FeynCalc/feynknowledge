@@ -1,0 +1,413 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13431,        405]
+NotebookOptionsPosition[     12464,        367]
+NotebookOutlinePosition[     12863,        384]
+CellTagsIndexPosition[     12820,        381]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Installing FeynCalc and FeynHelpers", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Import", "[", 
+  "\"\<https://raw.githubusercontent.com/FeynCalc/feyncalc/master/install.m\>\
+\"", "]"}], "\n", 
+ RowBox[{"InstallFeynCalc", "[", "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Downloading FeynCalc from \
+https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip ...done! 
+FeynCalc zip file was saved to /tmp/m000002223521.
+Extracting FeynCalc zip file to /tmp/m000002223521.dir ...done! 
+Copying FeynCalc to /home/vs/.Mathematica/Applications/FeynCalc ...done! 
+Setting up the help system ... Setting up the format type of new output cells \
+... done! 
+Downloading FeynArts from \
+https://github.com/FeynCalc/feynarts-mirror/archive/master.zip ...done! 
+FeynArts zip file was saved to /tmp/m000005223521.
+Extracting FeynArts zip file to \
+/home/vs/.Mathematica/Applications/FeynCalc/FeynArts ...done! 
+Copying FeynArts to /home/vs/.Mathematica/Applications/FeynCalc/FeynArts \
+...done! 
+
+Installation complete! Loading FeynCalc ... 
+Patching FeynArts... done!\
+\>", "Print"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynCalc \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"9.2.0. For help, use the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"documentation", " ", "center"}],
+       BaseStyle->"Link",
+       ButtonData:>"paclet:FeynCalc/",
+       ButtonNote->"paclet:FeynCalc/"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\", check out the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["wiki",
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None},
+       ButtonNote->"https://github.com/FeynCalc/feyncalc/wiki"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or write to the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"mailing", " ", 
+        RowBox[{"list", "."}]}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feyncalc.org/forum/"], None},
+       ButtonNote->"http://www.feyncalc.org/forum/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynCalc ", "Text", Bold], 
+    Style["9.2.0. For help, use the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "documentation center", BaseStyle -> "Link", ButtonData :> 
+       "paclet:FeynCalc/", ButtonNote -> "paclet:FeynCalc/"]], "Text"], 
+    Style[", check out the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["wiki", ButtonData :> {
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> 
+       "https://github.com/FeynCalc/feyncalc/wiki"]], "Text"], 
+    Style[" or write to the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["mailing list.", ButtonData :> {
+         URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"See also the supplied \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"examples", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" If you use FeynCalc in your research, please cite\"\>", 
+     "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["See also the supplied ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+       Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" If you use FeynCalc in your research, please cite", "Text"]],
+   Editable->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
+Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
+Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynArts \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"3.9 patched for use with FeynCalc, for documentation use \
+the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["manual",
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         First[
+          FileNames[{"*.pdf", "*.PDF"}, 
+           FileNameJoin[{FeynCalc`$FeynArtsDirectory, "manual"}]]]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or visit \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"www", ".", "feynarts", ".", "de", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feynarts.de/"], None},
+       ButtonNote->"www.feynarts.de/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynArts ", "Text", Bold], 
+    Style[
+    "3.9 patched for use with FeynCalc, for documentation use the ", "Text"], 
+    
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "manual", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         First[
+          FileNames[{"*.pdf", "*.PDF"}, 
+           FileNameJoin[{FeynCalc`$FeynArtsDirectory, "manual"}]]]], 
+       Evaluator -> Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" or visit ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["www.feynarts.de.", ButtonData :> {
+         URL["http://www.feynarts.de/"], None}, BaseStyle -> "Hyperlink", 
+       ButtonNote -> "www.feynarts.de/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Import", "[", 
+  "\"\<https://raw.githubusercontent.com/FeynCalc/feynhelpers/master/install.\
+m\>\"", "]"}], "\n", 
+ RowBox[{"InstallFeynHelpers", "[", "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"FeynCalc \"\>", "Text",
+     StripOnInput->False,
+     FontWeight->Bold], "\[InvisibleSpace]", 
+    StyleBox["\<\"9.2.0. For help, use the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"documentation", " ", "center"}],
+       BaseStyle->"Link",
+       ButtonData:>"paclet:FeynCalc/",
+       ButtonNote->"paclet:FeynCalc/"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\", check out the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox["wiki",
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None},
+       ButtonNote->"https://github.com/FeynCalc/feyncalc/wiki"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" or write to the \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"mailing", " ", 
+        RowBox[{"list", "."}]}],
+       BaseStyle->"Hyperlink",
+       ButtonData:>{
+         URL["http://www.feyncalc.org/forum/"], None},
+       ButtonNote->"http://www.feyncalc.org/forum/"],
+      DisplayForm], "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["FeynCalc ", "Text", Bold], 
+    Style["9.2.0. For help, use the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "documentation center", BaseStyle -> "Link", ButtonData :> 
+       "paclet:FeynCalc/", ButtonNote -> "paclet:FeynCalc/"]], "Text"], 
+    Style[", check out the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["wiki", ButtonData :> {
+         URL["https://github.com/FeynCalc/feyncalc/wiki"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> 
+       "https://github.com/FeynCalc/feyncalc/wiki"]], "Text"], 
+    Style[" or write to the ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox["mailing list.", ButtonData :> {
+         URL["http://www.feyncalc.org/forum/"], None}, BaseStyle -> 
+       "Hyperlink", ButtonNote -> "http://www.feyncalc.org/forum/"]], "Text"]],
+   Editable->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   RowBox[{
+    StyleBox["\<\"See also the supplied \"\>", "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox[
+     TagBox[
+      ButtonBox[
+       RowBox[{"examples", "."}],
+       BaseStyle->"Hyperlink",
+       ButtonFunction:>SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]],
+       Evaluator->Automatic,
+       Method->"Preemptive"],
+      DisplayForm], "Text",
+     StripOnInput->False], "\[InvisibleSpace]", 
+    StyleBox["\<\" If you use FeynCalc in your research, please cite\"\>", 
+     "Text",
+     StripOnInput->False]}],
+   SequenceForm[
+    Style["See also the supplied ", "Text"], 
+    Style[
+     DisplayForm[
+      ButtonBox[
+      "examples.", BaseStyle -> "Hyperlink", ButtonFunction :> SystemOpen[
+         FileNameJoin[{FeynCalc`$FeynCalcDirectory, "Examples"}]], Evaluator -> 
+       Automatic, Method -> "Preemptive"]], "Text"], 
+    Style[" If you use FeynCalc in your research, please cite", "Text"]],
+   Editable->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] V. Shtabovenko, R. Mertig and F. Orellana, Comput. \
+Phys. Commun., 207C, 432-444, 2016, arXiv:1601.01167\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print"],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox["\<\" \[Bullet] R. Mertig, M. B\[ODoubleDot]hm, and A. Denner, \
+Comput. Phys. Commun., 64, 345-359, 1991.\"\>", "Text",
+   StripOnInput->False], TraditionalForm]], "Print"],
+
+Cell["\<\
+Downloading FeynHelpers from \
+https://github.com/FeynCalc/feynhelpers/archive/stable.zip ...done! 
+FeynHelpers zip file was saved to /tmp/m00000338551.
+Extracting FeynHelpers zip file to /tmp/m00000338551.dir ...done! 
+Copying FeynHelpers to \
+/home/vs/.Mathematica/Applications/FeynCalc/AddOns/FeynHelpers ...done! 
+done! 
+Downloading Package-X from \
+http://www.hepforge.org/archive/packagex/X-2.0.4.zip ...done! 
+Package-X zip file was saved to /tmp/m00000638551.
+Extracting Package-X zip file to /tmp/m00000638551.dir ...done! 
+Copying Package-X to /home/vs/.Mathematica/Applications/X ...done! 
+Downloading FIRE from \
+https://bitbucket.org/feynmanIntegrals/fire/downloads/FIRE5.2.tar.gz ...done! \
+
+FIRE tarball was saved to /tmp/m00000738551.
+Extracting FIRE tarball to /tmp/m00000738551.dir ...done! 
+Copying FIRE to /home/vs/.Mathematica/Applications/FIRE5 ...done! 
+
+Installation complete! To load FeynHelpers, restart Mathematica and evaluate 
+
+ $LoadAddOns={\"FeynHelpers\"}; 
+
+ before you load FeynCalc; \
+\>", "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 989},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+CreateCellID->False,
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb",
+$CellContext`FileOutlineCache -> False
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 54, 0, 64, "Section"],
+Cell[CellGroupData[{
+Cell[659, 26, 188, 4, 57, "Input"],
+Cell[CellGroupData[{
+Cell[872, 34, 813, 18, 223, "Print"],
+Cell[1688, 54, 2282, 63, 26, "Print"],
+Cell[3973, 119, 1067, 29, 26, "Print"],
+Cell[5043, 150, 223, 4, 26, "Print"],
+Cell[5269, 156, 208, 4, 26, "Print"],
+Cell[5480, 162, 1841, 53, 26, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7370, 221, 194, 4, 57, "Input"],
+Cell[CellGroupData[{
+Cell[7589, 229, 2282, 63, 26, "Print"],
+Cell[9874, 294, 1067, 29, 26, "Print"],
+Cell[10944, 325, 223, 4, 26, "Print"],
+Cell[11170, 331, 208, 4, 26, "Print"],
+Cell[11381, 337, 1043, 25, 349, "Print"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
